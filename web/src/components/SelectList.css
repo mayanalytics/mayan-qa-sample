@@ -1,0 +1,37 @@
+.SelectList-input {
+  width: 32rem
+}
+
+.SelectList-option_box {
+  position: absolute;
+  width: 32rem;
+  margin-left: 0.25rem;
+  padding-left: 0;
+  color: black;
+  background-color: white;
+  list-style: none;
+}
+
+.SelectList-option {
+  padding: 0.35rem 1rem;
+  cursor: pointer;
+  border-color: white;
+  border-style: solid;
+  border-width: 0;
+}
+
+.SelectList-option:not(:first-of-type) {
+  border-top-width: 1px;
+}
+
+.SelectList-option[aria-selected="true"] {
+  color: white;
+}
+
+.SelectList-option--green[aria-selected="true"] {
+  background-color: green;
+}
+
+.SelectList-option--red[aria-selected="true"] {
+  background-color: red;
+}
