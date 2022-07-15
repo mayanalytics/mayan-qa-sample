@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm -w web run build",
+    "deploy": "firebase deploy",
+    "start": "serve -s web/build"
   },
   "repository": {
     "type": "git",
@@ -21,14 +23,8 @@
     "web"
   ],
   "devDependencies": {
-    "@types/lodash": "^4.14.182",
-    "firebase": "^9.9.0",
-    "ts-node": "^10.9.1",
+    "firebase-tools": "^11.2.2",
+    "serve": "^14.0.1",
     "typescript": "^4.7.4"
-  },
-  "dependencies": {
-    "@headlessui/react": "^1.6.6",
-    "lodash": "^4.17.21",
-    "react-hook-form": "^7.33.1"
   }
 }

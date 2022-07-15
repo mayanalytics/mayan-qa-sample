@@ -1,8 +1,20 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import { getAnalytics } from 'firebase/analytics';
+import { initializeApp } from 'firebase/app';
+import React, { useEffect, useState } from 'react';
 import { FieldErrors, Resolver, useFieldArray, useForm } from 'react-hook-form';
 import './App.css';
 import { SelectList, SelectListOptionType } from './components/SelectList';
 import { getTasks } from './lib/data';
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyDTqgIQVHZQlBOwZAWWWkmklbm7RMPGfk4',
+  authDomain: 'mayan-qa-sample.firebaseapp.com',
+  projectId: 'mayan-qa-sample',
+  storageBucket: 'mayan-qa-sample.appspot.com',
+  messagingSenderId: '288764287974',
+  appId: '1:288764287974:web:92636d73967c027d731427',
+  measurementId: 'G-TQLBHHW7MN',
+};
 
 type FormValues = {
   summary: string;
@@ -63,6 +75,11 @@ function App() {
   }, []);
 
   console.log(tasks);
+
+  useEffect(() => {
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  });
 
   return (
     <div className="App">
